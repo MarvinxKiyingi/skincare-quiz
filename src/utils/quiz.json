@@ -1,0 +1,104 @@
+[
+  {
+    "questionLabel": "What's the highest SPF one really needs for proper sun protection?",
+    "answerOptions": [
+      { "answerLabel": "SPF 30", "isTrue": false },
+      { "answerLabel": "SPF 15", "isTrue": false },
+      { "answerLabel": "SPF 70", "isTrue": false },
+      { "answerLabel": "SPF 45", "isTrue": true }
+    ]
+  },
+  {
+    "questionLabel": "Why is raw honey good for the skin?",
+    "answerOptions": [
+      { "answerLabel": "Full of antioxidants", "isTrue": false },
+      { "answerLabel": "Moisturizing", "isTrue": false },
+      { "answerLabel": "All of the options", "isTrue": true },
+      { "answerLabel": "Naturally antibacterial", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "What is the benefit of topical Vitamin C?",
+    "answerOptions": [
+      { "answerLabel": "UVA and UVB protection", "isTrue": false },
+      { "answerLabel": "Evens skin tone", "isTrue": false },
+      { "answerLabel": "All of the options", "isTrue": true },
+      { "answerLabel": "Anti-aging", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "What's better: pure serums or moisturizers?",
+    "answerOptions": [
+      { "answerLabel": "Moisturizers because they have more elements than just one in a serum", "isTrue": false },
+      { "answerLabel": "Serums because it is the product in its most pure form", "isTrue": true },
+      { "answerLabel": "Neither because your skin naturally produces everything it needs", "isTrue": false },
+      { "answerLabel": "Both. More moisture, nutrients, and properties the better", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "Where is the thinnest skin located that people may neglect?",
+    "answerOptions": [
+      { "answerLabel": "Nose", "isTrue": false },
+      { "answerLabel": "Eyelid", "isTrue": true },
+      { "answerLabel": "Neck", "isTrue": false },
+      { "answerLabel": "Top of hands", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "What is the correct order to apply products?",
+    "answerOptions": [
+      { "answerLabel": "Cleanse, tone, apply serums, antioxidant, moisturizer, oils, eye cream", "isTrue": true },
+      { "answerLabel": "Cleanse, tone, moisturize, apply serums, oils, antioxidant, eye cream", "isTrue": false },
+      { "answerLabel": "Cleanse, moisturize, eye cream, tone, apply serums, antioxidant, oils", "isTrue": false },
+      { "answerLabel": "Cleanse, eye cream, moisturize, oils, apply serums, antioxidant, tone", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "Cleopatra was said to have bathed in the milk of 700 donkeys. What skin care benefits did that possess?",
+    "answerOptions": [
+      { "answerLabel": "Milk is creamy and hydrates the skin", "isTrue": false },
+      { "answerLabel": "Milk contains lactic acid and acts as a mild exfoliant", "isTrue": true },
+      { "answerLabel": "None, but it feels luxurious", "isTrue": false },
+      { "answerLabel": "The protein in the milk prevented aging", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "When is the best time to start using anti-aging products?",
+    "answerOptions": [
+      { "answerLabel": "When you see your first wrinkle", "isTrue": false },
+      { "answerLabel": "When you turn 30", "isTrue": false },
+      { "answerLabel": "21", "isTrue": true },
+      { "answerLabel": "When you stop getting carded", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "What is the most important skin care step?",
+    "answerOptions": [
+      { "answerLabel": "Exfoliating", "isTrue": false },
+      { "answerLabel": "Cleansing", "isTrue": true },
+      { "answerLabel": "Using a vitamin serum", "isTrue": false },
+      { "answerLabel": "Moisturizing", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "Why should you cleanse twice a day?",
+    "answerOptions": [
+      { "answerLabel": "You shouldn't", "isTrue": false },
+      { "answerLabel": "You should only cleanse twice a day if you wore makeup or sweat", "isTrue": false },
+      {
+        "answerLabel": "Because your skin sheds and collects dirt and pollutants, so in the morning and at night you want to wash that off.",
+        "isTrue": true
+      },
+      { "answerLabel": "Because too much oil will build up if you don't and you'll break out", "isTrue": false }
+    ]
+  },
+  {
+    "questionLabel": "How often does the skin renew itself?",
+    "answerOptions": [
+      { "answerLabel": "Every night", "isTrue": false },
+      { "answerLabel": "Every year", "isTrue": false },
+      { "answerLabel": "Every 28 days", "isTrue": true },
+      { "answerLabel": "Every quarter", "isTrue": false }
+    ]
+  }
+]
