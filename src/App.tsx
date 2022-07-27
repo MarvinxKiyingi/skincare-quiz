@@ -4,6 +4,7 @@ import quizApi from './utils/quiz.json';
 import { IQuiz, IQuizAnswers } from './model/IQuiz';
 import { Button, LinearProgress, Paper, styled, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { useQuizContext } from './utils/QuizContex';
 
 const QuizContainer = styled(Box)(({ theme }) => ({
   '.correct': {
@@ -15,6 +16,12 @@ const QuizContainer = styled(Box)(({ theme }) => ({
 }));
 
 function App() {
+  const {
+    state: { name },
+  } = useQuizContext();
+
+  console.log('name', name);
+
   function shuffle(array: Array<any>) {
     return array.sort(() => Math.random() - 0.5);
   }
