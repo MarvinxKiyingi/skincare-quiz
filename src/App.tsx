@@ -1,10 +1,8 @@
-import { useState } from 'react';
 import './App.css';
-import quizApi from './utils/quiz.json';
-import { IQuiz, IQuizAnswers } from './model/IQuiz';
 import { Button, LinearProgress, Paper, styled, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useQuizContext } from './utils/QuizContex';
+import { shuffle } from './utils/shuffle';
 
 const QuizContainer = styled(Box)(({ theme }) => ({
   '.correct': {
@@ -17,59 +15,20 @@ const QuizContainer = styled(Box)(({ theme }) => ({
 
 function App() {
   const {
-    state: { name },
+    state: { viewQuiz, currentQuestionIndex, quizScore, quizProgress },
+    handlers: { quizApiResponse, handleAnswer, handleReset },
   } = useQuizContext();
 
-  console.log('name', name);
-
-  function shuffle(array: Array<any>) {
-    return array.sort(() => Math.random() - 0.5);
-  }
-
-  const quiz: Array<IQuiz> = shuffle(quizApi);
-
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [progress, setProgress] = useState(0);
-  const [viewQuiz, setViewQuiz] = useState(true);
-  const [quizScore, setQuizScore] = useState(0);
-
-  const inkrementWith = 100 / quiz.length;
-
-  const handleProgress = () => {
-    setProgress(progress + inkrementWith);
-  };
-
-  const handleAnswer = (answers: IQuizAnswers) => {
-    const nextQuestion = currentQuestionIndex + 1;
-    handleProgress();
-
-    if (nextQuestion < quiz.length) {
-      setCurrentQuestionIndex(nextQuestion);
-    } else {
-      setViewQuiz(false);
-    }
-
-    if (answers.isTrue === true) {
-      setQuizScore(quizScore + 1);
-    }
-  };
-
-  const handleReset = () => {
-    setCurrentQuestionIndex(0);
-    setProgress(0);
-    setQuizScore(0);
-    setViewQuiz(true);
-  };
   return (
     <QuizContainer className='App'>
       <Box component='header' className='App-header'>
         {viewQuiz ? (
           <>
             <Box sx={{ width: '50%' }}>
-              <LinearProgress className='linearProgress' variant='determinate' color='success' value={progress} />
+              <LinearProgress className='linearProgress' variant='determinate' color='success' value={quizProgress ? quizProgress : 0} />
             </Box>
 
-            {quiz.map(
+            {quizApiResponse.map(
               (question, index) =>
                 index === currentQuestionIndex && (
                   <Box key={index}>
@@ -101,7 +60,7 @@ function App() {
             </Typography>
 
             <Typography component='h1' variant='h1' sx={{ fontWeight: 700 }}>
-              {quizScore} / {quiz.length}
+              {quizScore} / {quizApiResponse.length}
             </Typography>
             <Button variant='contained' onClick={handleReset} sx={{ margin: '1rem 0rem' }}>
               Reset quiz
