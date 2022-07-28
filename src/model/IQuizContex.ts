@@ -14,11 +14,18 @@ export type IQuizContext = {
 
     quizScore: number | null;
     setQuizScore?: Dispatch<SetStateAction<number>>;
+
+    viewStart: boolean | null;
+    setViewStart?: Dispatch<SetStateAction<boolean>>;
+
+    viewResults: boolean | null;
+    setViewResults?: Dispatch<SetStateAction<boolean>>;
   };
   handlers: {
     quizApiResponse: Array<IQuiz>;
     handleProgress: () => void;
     handleAnswer: (answer: IQuizAnswers) => void;
     handleReset: () => void;
+    getQuiz: () => void;
   };
 };

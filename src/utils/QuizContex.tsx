@@ -21,8 +21,10 @@ export const QuizContexProvider = ({ children }: IQuizContextProvidorProps) => {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [quizProgress, setQuizProgress] = useState(0);
-  const [viewQuiz, setViewQuiz] = useState(true);
+  const [viewQuiz, setViewQuiz] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
+  const [viewStart, setViewStart] = useState(true);
+  const [viewResults, setViewResults] = useState(false);
 
   const inkrementWith = 100 / quizApiResponse.length;
 
@@ -37,7 +39,7 @@ export const QuizContexProvider = ({ children }: IQuizContextProvidorProps) => {
     if (nextQuestion < quizApiResponse.length) {
       setCurrentQuestionIndex(nextQuestion);
     } else {
-      setViewQuiz(false);
+      setViewResults(true);
     }
 
     if (answers.isTrue === true) {
@@ -45,15 +47,22 @@ export const QuizContexProvider = ({ children }: IQuizContextProvidorProps) => {
     }
   };
 
+  const getQuiz = () => {
+    setViewQuiz(true);
+    setViewStart(false);
+  };
+
   const handleReset = () => {
     setCurrentQuestionIndex(0);
     setQuizProgress(0);
     setQuizScore(0);
-    setViewQuiz(true);
+    setViewResults(false);
+    setViewQuiz(false);
+    setViewStart(true);
   };
   const values = {
-    state: { currentQuestionIndex, quizProgress, viewQuiz, quizScore },
-    handlers: { quizApiResponse, handleProgress, handleAnswer, handleReset },
+    state: { currentQuestionIndex, quizProgress, viewQuiz, quizScore, viewResults, viewStart },
+    handlers: { quizApiResponse, handleProgress, handleAnswer, handleReset, getQuiz },
   };
 
   return <QuizContext.Provider value={values}>{children}</QuizContext.Provider>;
