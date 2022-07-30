@@ -40,6 +40,7 @@ export const QuizContexProvider = ({ children }: IQuizContextProvidorProps) => {
       setCurrentQuestionIndex(nextQuestion);
     } else {
       setViewResults(true);
+      setViewQuiz(false);
     }
 
     if (answers.isTrue === true) {

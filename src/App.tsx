@@ -3,6 +3,7 @@ import { styled, Box } from '@mui/material';
 import { useQuizContext } from './utils/QuizContex';
 import { StartPage } from './components/StartPage';
 import Quiz from './components/Quiz';
+import { QuizResults } from './components/QuizResults';
 
 const QuizContainer = styled(Box)(({ theme }) => ({}));
 
@@ -56,7 +57,7 @@ export const StyledWrapper = styled(Box)(({ theme }) => ({
 
 function App() {
   const {
-    state: { viewStart, viewQuiz },
+    state: { viewStart, viewQuiz, viewResults },
   } = useQuizContext();
 
   return (
@@ -64,6 +65,7 @@ function App() {
       {viewStart && <StartPage />}
 
       {viewQuiz && <Quiz />}
+      {viewResults && <QuizResults />}
     </QuizContainer>
   );
 }
