@@ -6,19 +6,30 @@ const StyledStartPage = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '2rem',
+  [theme.breakpoints.up('md')]: {
+    display: 'grid !important',
+    gridTemplateColumns: 'repeat(10,1fr)',
+  },
   h1: {
     fontFamily: "'Akaya Kanadaka', cursive",
     fontWeight: 600,
     textAlign: 'center',
-    maxWidth: '90%',
     [theme.breakpoints.up('md')]: {
       ...theme.typography.h3,
       fontFamily: "'Akaya Kanadaka', cursive",
       fontWeight: 600,
     },
-    'startPages-cta': {
-      fontFamily: 'inter',
-    },
+  },
+  '.startPage-container': {
+    gridColumn: '2/-2',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    [theme.breakpoints.up('md')]: {},
+  },
+  button: {
+    alignSelf: 'center',
+    [theme.breakpoints.up('md')]: {},
   },
 }));
 
@@ -29,12 +40,14 @@ export const StartPage = () => {
   return (
     <StyledWrapper>
       <StyledStartPage component='section'>
-        <Typography variant='h4' component='h1'>
-          How much do you think you know about skincare?
-        </Typography>
-        <Button onClick={getQuiz} variant='contained'>
-          Start quiz
-        </Button>
+        <Box className='startPage-container'>
+          <Typography variant='h4' component='h1'>
+            How much do you think you know about skincare?
+          </Typography>
+          <Button onClick={getQuiz} variant='contained'>
+            Start quiz
+          </Button>
+        </Box>
       </StyledStartPage>
     </StyledWrapper>
   );
