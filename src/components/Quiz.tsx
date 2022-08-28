@@ -3,7 +3,7 @@ import { StyledWrapper } from '../App';
 import { useQuizContext } from '../utils/QuizContex';
 import { shuffle } from '../utils/shuffle';
 
-const StyledQuiz = styled(Box)(({ theme }) => ({
+export const StyledQuiz = styled(Box)(({ theme }) => ({
   '.quizWrapper': {
     flex: 1,
     display: 'flex',
